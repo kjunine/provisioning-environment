@@ -1,0 +1,7 @@
+require_relative '../utils'
+
+source "https://supermarket.getchef.com"
+
+cookbook 'docker'
+
+metadata path: Dirs.site_cookbooks('base')

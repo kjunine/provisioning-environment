@@ -1,0 +1,26 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require_relative '../utils'
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.require_version ">= 1.5.0"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.omnibus.chef_version = :latest
+  config.berkshelf.enabled = true
+
+  config.vm.box = "chef/ubuntu-14.04"
+
+  config.vm.define "base"
+  config.vm.hostname = "base"
+
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = [Dirs.cookbooks(), Dirs.site_cookbooks()]
+    chef.roles_path = Dirs.roles()
+    chef.environments_path = Dirs.environments()
+    chef.data_bags_path = Dirs.data_bags()
+    chef.add_role "base"
+  end
+end
