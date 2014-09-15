@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+vagrant.base() {
+  VAGRANT_CWD=./vagrants/virtualbox-base vagrant "$@"
+}
+
+vagrant.data() {
+  VAGRANT_CWD=./vagrants/virtualbox-data vagrant "$@"
+}
+
+docker.data() {
+  DOCKER_HOST=tcp://localhost:2376 docker "$@"
+}
