@@ -1,1 +1,0 @@
-default["mongodb"]["replSet"] = "test"
