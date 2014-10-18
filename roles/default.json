@@ -1,5 +1,5 @@
 {
-  "name": "base",
+  "name": "default",
   "description": "",
   "json_class": "Chef::Role",
   "default_attributes": {
