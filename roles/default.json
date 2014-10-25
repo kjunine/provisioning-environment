@@ -15,14 +15,7 @@
   "run_list": [
     "recipe[base]",
     "recipe[docker]",
-    "recipe[base::upgrade]",
-    "recipe[docker-nginx]",
-    "recipe[docker-mongodb]",
-    "recipe[docker-mongodb-replset-configurator]",
-    "recipe[docker-mms]",
-    "recipe[docker-redis]",
-    "recipe[docker-nodejs]",
-    "recipe[docker-docker-registry]"
+    "recipe[base::upgrade]"
   ],
   "env_run_lists": {}
 }
