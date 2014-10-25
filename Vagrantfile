@@ -12,8 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "default"
   config.vm.hostname = "default"
-  config.vm.network "forwarded_port", guest: 2375, host: 2375
-  config.vm.network "private_network", ip: "192.168.7.10"
+  config.vm.network "private_network", type: "dhcp"
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
